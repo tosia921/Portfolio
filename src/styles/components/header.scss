@@ -1,0 +1,90 @@
+.header {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: rgb(91, 147, 197);
+
+  @include from("md") {
+    height: 75px;
+  }
+
+  .logo {
+    height: 30px;
+    svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .hamburger {
+    @include from("md") {
+      display: none;
+    }
+  }
+
+  nav.open {
+    transform: translateX(-100%);
+  }
+
+  nav {
+    position: absolute;
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+    width: 100vw;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease-in;
+
+    @include from("md") {
+      position: relative;
+      margin-top: 0;
+      left: unset;
+      right: unset;
+      width: unset;
+      height: unset;
+      background-color: transparent;
+      transition: none;
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0;
+
+      @include from("md") {
+        flex-direction: row;
+      }
+
+      a {
+        color: var(--text-base);
+        text-shadow: var(--shadow-text);
+        text-decoration: none;
+        font-size: 3rem;
+        font-weight: 600;
+        @include from("md") {
+          font-size: 1.8rem;
+        }
+      }
+
+      .active {
+        color: var(--text-orange);
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 10px;
+        @include from("md") {
+          margin-bottom: 0;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

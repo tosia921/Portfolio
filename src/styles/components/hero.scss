@@ -1,0 +1,22 @@
+.hero {
+  &__blob {
+    position: absolute;
+    top: -20vh;
+    right: -30vw;
+    z-index: -1;
+    width: 70vw;
+    // transform: rotate(90deg);
+    overflow: visible;
+
+    @include from("md") {
+      width: 50vw;
+      top: -20vh;
+      right: 0;
+    }
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

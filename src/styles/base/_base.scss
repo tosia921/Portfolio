@@ -1,0 +1,29 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-page);
+}
+
+.page-padding {
+  padding: 0 2rem;
+
+  @include from("sm") {
+    padding: 0 3rem;
+  }
+  @include from("md") {
+    padding: 0 4rem;
+  }
+  @include from("lg") {
+    padding: 0 5rem;
+  }
+  @include from("xl") {
+    padding: 0 calc((100vw - 1024px) / 2);
+  }
+  @include from("xxl") {
+    padding: 0 calc((100vw - 1240px) / 2);
+  }
+}
